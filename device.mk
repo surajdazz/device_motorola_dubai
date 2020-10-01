@@ -463,6 +463,10 @@ PRODUCT_COPY_FILES += \
 # Screen
 TARGET_SCREEN_DENSITY := 400
 
+# Remove unwanted packages
+PRODUCT_PACKAGES += \
+    RemovePackages
+
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@2.0-service.multihal \
