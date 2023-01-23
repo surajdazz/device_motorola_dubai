@@ -4,9 +4,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-PRODUCT_BUILD_SUPER_PARTITION := false
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
@@ -397,6 +394,13 @@ PRODUCT_PACKAGES += \
     TelephonyResCommon \
     WifiResTargetCommon \
     WifiResTargetDubai
+
+# Partitions - Dynamic
+PRODUCT_BUILD_ODM_IMAGE := true
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
+# Partitions - Super
+PRODUCT_BUILD_SUPER_PARTITION := false
 
 # Perf
 PRODUCT_PACKAGES += \
