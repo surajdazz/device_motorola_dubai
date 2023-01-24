@@ -22,6 +22,10 @@
 # Awinic
 /(mnt/vendor/persist|persist)/factory/audio/aw_cali.bin u:object_r:vendor_persist_audio_file:s0
 
+# Dolby
+/data/vendor/dolby(/.*)?                                                               u:object_r:vendor_data_file:s0
+/(vendor|system/vendor)/bin/hw/vendor\.dolby\.hardware\.dms@2\.0-service               u:object_r:hal_dms_default_exec:s0
+
 # Camera
 /(mnt/vendor/persist|persist)/camera(/.*)?              u:object_r:vendor_persist_camera_file:s0
 /(vendor|system/vendor)/bin/hw/motorola\.hardware\.camera\.desktop@2\.0-service u:object_r:hal_cameradesktop_default_exec:s0
