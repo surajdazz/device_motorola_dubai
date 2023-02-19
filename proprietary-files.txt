@@ -1230,6 +1230,11 @@ vendor/lib64/libprekill.so
 vendor/lib64/libsplh.so
 
 # Perf
+system/framework/QPerformance.jar
+system/framework/QXPerformance.jar
+system/framework/UxPerformance.jar
+system_ext/lib/libqti_performance.so
+system_ext/lib64/libqti_performance.so
 vendor/bin/hw/vendor.qti.hardware.perf@2.2-service
 vendor/bin/poweropt-service
 vendor/etc/init/poweropt-service.rc
