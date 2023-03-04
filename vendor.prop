@@ -236,6 +236,8 @@ ro.surface_flinger.use_color_management=true
 ro.surface_flinger.wcg_composition_dataspace=143261696
 vendor.gralloc.disable_ubwc=0
 vendor.hw.sf.IdleLazyResetThresholdT=1000
+debug.sf.auto_latch_unsignaled=true
+debug.force_no_blanking=true
 
 # IMS
 persist.vendor.ims.cam_sensor_delay=20
@@ -310,6 +312,9 @@ persist.vendor.radio.suppress_ussd_rel=1
 persist.vendor.radio.sw_mbn_update=0
 persist.vendor.rcs.presence.provision=0
 ro.vendor.radio.imei.sv=14
+
+# Seamless transfer
+sys.fflag.override.settings_seamless_transfer=true
 
 # Sensors
 persist.vendor.sensors.allow_non_default_discovery=true

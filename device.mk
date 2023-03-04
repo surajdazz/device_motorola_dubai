@@ -38,6 +38,16 @@ PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
 
+# Background dexopt OTA
+PRODUCT_VENDOR_PROPERTIES += \
+    pm.dexopt.ab-ota=speed-profile
+
+# Preopted ODEX files (system_other)
+PRODUCT_PACKAGES += \
+    cppreopts.sh
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.cp_system_other_odex=1
+
 # Additional native libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt \
@@ -148,6 +158,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.front.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml
+
+# Charger
+WITH_LINEAGE_CHARGER := false
 
 # Display
 PRODUCT_PACKAGES += \
@@ -271,6 +284,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.class_main.sh \
     init.crda.sh \
+    init.dubai.perf.rc \
     init.kernel.post_boot-lahaina.sh \
     init.kernel.post_boot-shima.sh \
     init.kernel.post_boot-yupik.sh \
@@ -313,6 +327,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.device_id_attestation.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.device_id_attestation.xml
+
+# LiveDisplay
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@2.1-service.dubai
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -379,6 +397,9 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay-lineage
+
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
@@ -446,7 +467,6 @@ TARGET_SCREEN_DENSITY := 400
 PRODUCT_PACKAGES += \
     android.hardware.sensors@2.0-service.multihal \
     libsensorndkbridge \
-    PRODUCT_PACKAGES += \
     sensors.dubai
 
 PRODUCT_COPY_FILES += \

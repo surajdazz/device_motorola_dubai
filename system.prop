@@ -40,6 +40,9 @@ persist.dbg.vt_avail_ovr=1
 persist.dbg.wfc_avail_ovr=1
 ro.qcom.ims.use_moto_vt_ext=true
 
+# LMK
+ro.config.low_ram=false
+
 # Media
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 ro.media.recorder-max-base-layer-fps=60
@@ -72,3 +75,6 @@ persist.device_config.runtime_native.usap_pool_enabled=true
 
 #Disable MTE Async for system server
 arm64.memtag.process.system_server=off
+
+# Disable Skia tracing by default
+debug.hwui.skia_atrace_enabled=false

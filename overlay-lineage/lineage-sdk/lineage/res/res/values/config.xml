@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2007 The Android Open Source Project
+<!--
+     Copyright (C) 2015-2016 The CyanogenMod Project
+                   2017-2018 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -13,13 +15,15 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+<resources>
+    <!-- Whether device has screen with higher aspect ratio -->
+    <bool name="config_haveHigherAspectRatioScreen">true</bool>
 
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-
-    <!-- Whether to show min refresh rate in display settings -->
-    <bool name="config_show_min_refresh_rate_switch">true</bool>
-
-    <!-- Whether to show peak refresh rate in display settings -->
-    <bool name="config_show_peak_refresh_rate_switch">true</bool>
-
+    <!-- Defines the actions shown in advanced reboot submenu -->
+    <string-array name="config_restartActionsList">
+        <item>restart</item>
+        <item>restart_recovery</item>
+        <item>restart_bootloader</item>
+        <item>restart_fastboot</item>
+     </string-array>
 </resources>

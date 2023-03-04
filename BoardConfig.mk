@@ -16,7 +16,7 @@ TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := cortex-a76
 
 TARGET_2ND_ARCH := arm
-TARGET_2ND_ARCH_VARIANT := armv8-a
+TARGET_2ND_ARCH_VARIANT := armv8-2a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a76
@@ -36,21 +36,24 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 # Kernel
 BOARD_BOOT_HEADER_VERSION := 3
 BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 msm_rtb.filter=0x237
+BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8
 BOARD_KERNEL_CMDLINE += androidboot.hardware=qcom androidboot.console=ttyMSM0
 BOARD_KERNEL_CMDLINE += androidboot.memcg=1 lpm_levels.sleep_disabled=1
+BOARD_KERNEL_CMDLINE += msm_rtb.filter=0x237
 BOARD_KERNEL_CMDLINE += service_locator.enable=1 androidboot.usbcontroller=a600000.dwc3
 BOARD_KERNEL_CMDLINE += swiotlb=0 loop.max_part=7 cgroup.memory=nokmem,nosocket
 BOARD_KERNEL_CMDLINE += pcie_ports=compat iptable_raw.raw_before_defrag=1
 BOARD_KERNEL_CMDLINE += ip6table_raw.raw_before_defrag=1 androidboot.hab.csv=8
-BOARD_KERNEL_CMDLINE += androidboot.hab.cid=50 androidboot.hab.product=dubai
+BOARD_KERNEL_CMDLINE += androidboot.hab.cid=50
 BOARD_KERNEL_CMDLINE += firmware_class.path=/vendor/firmware_mnt/image
+BOARD_KERNEL_CMDLINE += androidboot.hab.product=dubai
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_RAMDISK_USE_LZ4 := true
-TARGET_KERNEL_SOURCE := kernel/motorola/sm7325
+TARGET_KERNEL_CLANG_VERSION := latest
+TARGET_KERNEL_SOURCE := kernel/motorola/dubai
 TARGET_KERNEL_CONFIG := vendor/dubai-qgki_defconfig
 
 # Platform
@@ -59,6 +62,9 @@ TARGET_BOARD_PLATFORM := lahaina
 
 # A/B
 AB_OTA_UPDATER := true
+
+# A/B ART
+BOARD_USES_SYSTEM_OTHER_ODEX := true
 
 AB_OTA_PARTITIONS += \
     boot \
@@ -118,7 +124,8 @@ LOC_HIDL_VERSION := 4.0
 # HIDL
 DEVICE_FRAMEWORK_MANIFEST_FILE += $(DEVICE_PATH)/framework_manifest.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
-    $(DEVICE_PATH)/device_framework_matrix.xml
+    $(DEVICE_PATH)/device_framework_matrix.xml \
+    vendor/lineage/config/device_framework_matrix.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest_yupik.xml
 

@@ -14,6 +14,14 @@ $(call inherit-product, device/motorola/dubai/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+# Custom features
+TARGET_HAS_UDFPS := true
+TARGET_ENABLE_BLUR := true
+TARGET_SUPPORTS_QUICK_TAP := true
+
+# Inherit Gapps
+$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
+
 PRODUCT_NAME := lineage_dubai
 PRODUCT_DEVICE := dubai
 PRODUCT_MANUFACTURER := motorola
@@ -24,6 +32,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_PRODUCT=dubai_g \
-    PRIVATE_BUILD_DESC="dubai_g-user 12 S1RD32M.55-94-2 25a783 release-keys"
+    PRIVATE_BUILD_DESC="dubai_g-user 12 S1RD32.55-94-2 25a783 release-keys"
 
-BUILD_FINGERPRINT := motorola/dubai_g/dubai:12/S1RDS32M.55-94-2/25a783:user/release-keys
+BUILD_FINGERPRINT := motorola/dubai_g/dubai:12/S1RDS32.55-94-2/25a783:user/release-keys
