@@ -294,7 +294,7 @@
         <item>"/system/framework/framework.jar"</item>
         <item>"/system/framework/services.jar"</item>
         <item>"/system/bin/surfaceflinger"</item>
-        <item>"/system_ext/priv-app/SystemUI/SystemUI.apk"</item>
+        <item>"/system_ext/priv-app/SystemUIGoogle/SystemUIGoogle.apk"</item>
         <item>"/system_ext/priv-app/MotoDolbyDax3/MotoDolbyDax3.apk"</item>
         <item>"/system_ext/priv-app/daxService/daxService.apk"</item>
         <item>"/vendor/lib64/libcamxexternalformatutils.so"</item>
@@ -329,7 +329,7 @@
     <string name="config_dozeUdfpsLongPressSensorType" translatable="false">org.lineageos.sensor.udfps</string>
 
     <!-- Whether devices suports in-display fingerprint when screen is off -->
-    <bool name="config_supportScreenOffUdfps">true</bool>
+    <bool name="config_supportsScreenOffUdfps">true</bool>
 
     <!-- The display uses different gamma curves for different refresh rates. It's hard for panel
          vendor to tune the curves to have exact same brightness for different refresh rate. So
@@ -359,10 +359,10 @@
     <!-- Whether the device supports Smart Pixels -->
     <bool name="config_supportSmartPixels">true</bool>
 
-    <!-- Default state for LiveDisplay -->
-    <bool name="config_defaultCABC">true</bool>
-
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
     <bool name="config_unplugTurnsOnScreen">true</bool>
+
+    <!-- Pocket Lock -->
+    <bool name="config_pocketModeSupported">true</bool>
 
 </resources>
