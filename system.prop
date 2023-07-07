@@ -1,3 +1,9 @@
 # Google
 ro.opa.device_model_id=motorola-dubai
 ro.opa.eligible_device=true
+
+# Misc
+debug.force_no_blanking=true
+
+# Storage
+persist.sys.fuse.passthrough.enable=true
