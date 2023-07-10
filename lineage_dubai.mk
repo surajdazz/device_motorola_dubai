@@ -20,10 +20,23 @@ PRODUCT_MANUFACTURER := motorola
 PRODUCT_BRAND := motorola
 PRODUCT_MODEL := motorola edge 30
 
-PRODUCT_GMS_CLIENTID_BASE := android-motorola
-
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_PRODUCT=dubai_g \
     PRIVATE_BUILD_DESC="dubai_g-user 13 T1RD33.116-33-15 f0bc9-36fb4 release-keys"
 
 BUILD_FINGERPRINT := motorola/dubai_g/dubai:13/T1RD33.116-33-15/f0bc9-36fb4:user/release-keys
+
+# Remove unwanted packages
+ PRODUCT_PACKAGES += \
+    RemovePackages
+
+# Inherit some common Gapps stuff.
+$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
+
+# Lineage
+WITH_GMS := true
+TARGET_HAS_UDFPS := true
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_EXCLUDES_AUDIOFX := true
+TARGET_ENABLE_BLUR := true

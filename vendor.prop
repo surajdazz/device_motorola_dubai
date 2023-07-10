@@ -30,3 +30,6 @@ persist.dbg.wfc_avail_ovr=1
 
 # FS-verity
 ro.apk_verity.mode=2
+
+# Skia
+renderthread.skia.reduceopstasksplitting=true
