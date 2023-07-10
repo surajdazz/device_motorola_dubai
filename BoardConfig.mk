@@ -32,7 +32,7 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest_dubai.xml
 
 # Kernel
 BOARD_KERNEL_CMDLINE += androidboot.hab.product=dubai
-TARGET_KERNEL_CONFIG := vendor/dubai-qgki_defconfig
+TARGET_KERNEL_CONFIG := vendor/dubai-qgki_defconfig vendor/debugfs.config
 TARGET_KERNEL_SOURCE := kernel/motorola/dubai
 
 # Partitions
