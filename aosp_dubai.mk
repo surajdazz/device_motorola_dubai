@@ -22,9 +22,9 @@ PRODUCT_MODEL := motorola edge 30
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_PRODUCT=dubai_g \
-    PRIVATE_BUILD_DESC="dubai_g-user 13 T1RD33.116-33-12 d501e0 7757c release-keys"
+    PRIVATE_BUILD_DESC="dubai_g-user 13 T1RD33.116-33-13 441420-2d5de8 release-keys"
 
-BUILD_FINGERPRINT := motorola/dubai_g/dubai:13/T1RD33.116-33-12/d501e0-7757c:user/release-keys
+BUILD_FINGERPRINT := motorola/dubai_g/dubai:13/T1RD33.116-33-13/441420-2d5de8:user/release-keys
 
 # Remove unwanted packages
  PRODUCT_PACKAGES += \
